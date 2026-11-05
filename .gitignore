@@ -1,0 +1,24 @@
+.venv/
+__pycache__/
+*.pyc
+bin/*.exe
+bin/VERSION
+.env
+build/
+dist/
+.pytest_cache/
+tmp-test/
+*.log
+
+# StreamGrab disi dosyalar (ayni klasorde duruyor)
+/.freebuff/
+/.env.example
+/village/
+/app.py
+/main.py
+/view.py
+/koy.html
+/debug2.py
+/debug_regex.py
+/tmp-bench/
+/tools/_bench.py

@@ -1,0 +1,33 @@
+{
+  "id": "yt-dlp",
+  "displayName": "yt-dlp",
+  "kind": "extractor",
+  "description": "1800+ site destekli extractor motoru. Indirmenin tamami bu araca devredilir.",
+  "executable": {
+    "windows": ["bin/yt-dlp.exe", "yt-dlp.exe"],
+    "any": ["bin/yt-dlp", "yt-dlp"]
+  },
+  "moduleFallback": ["-m", "yt_dlp"],
+  "versionArgs": ["--version"],
+  "baseArgs": ["--ignore-config", "--no-colors"],
+  "probeArgs": ["--dump-single-json", "--no-warnings", "--no-progress"],
+  "probeSingleArgs": ["--no-playlist"],
+  "probePlaylistArgs": ["--yes-playlist", "--flat-playlist", "--playlist-end", "1000"],
+  "jsRuntimeArg": "--js-runtimes",
+  "downloadArgs": [
+    "--newline",
+    "--no-playlist",
+    "--no-mtime",
+    "--windows-filenames",
+    "--encoding",
+    "utf-8"
+  ],
+  "progressTemplate": "download:@@PROG@@%(progress.downloaded_bytes)s;%(progress.total_bytes)s;%(progress.total_bytes_estimate)s;%(progress.speed)s;%(progress.eta)s",
+  "progressMarker": "@@PROG@@",
+  "requiresFfmpeg": true,
+  "update": {
+    "url": "https://api.github.com/repos/yt-dlp/yt-dlp/releases/latest",
+    "assetPattern": "yt-dlp\\.exe$",
+    "target": "bin/yt-dlp.exe"
+  }
+}
